@@ -20,7 +20,11 @@ class UserTest {
 //         user.initPassword(new RandomPasswordGenerator());
         // 고정된 올바르게 고정된 패스워드 제너레이터 생성
         // 올바르게 고정된 패스워트 제너레이터 주입!
-        user.initPassword(new CorrectFixedPasswodGenerator());
+//        user.initPassword(new CorrectFixedPasswodGenerator());
+
+        // 인터페이스가 펑셔널인터페이스 이므로 구현체를 만들 필요가 없다! -> lamda를 사용해주면 댐
+        user.initPassword(() -> "abcdefgh");
+
         // then
         assertThat(user.getPassword()).isNotNull();
 
@@ -34,7 +38,9 @@ class UserTest {
         User user = new User();
 
         // when
-        user.initPassword(new WrongFixedPasswodGenerator());
+//        user.initPassword(new WrongFixedPasswodGenerator());
+        // 인터페이스가 펑셔널인터페이스 이므로 구현체를 만들 필요가 없다! -> lamda를 사용해주면 댐
+        user.initPassword(() ->"ab");
         // then
         assertThat(user.getPassword()).isNull();
 
