@@ -18,10 +18,15 @@ public class GradeCalculatorTest {
     // 즉, 학점계산기가 이수한 과목을 인스턴스로 변수로 가지면서 평균학점을 계산할수 있을것 같다.
     // 우리가 이수한 과목에는 어떤것들이 있을 수 있을까? => 객체지향, 자료구조 , 중국어 회화 수업 이수 ==> 객체는 3가지
     // ==> 과목(코스) 라는 클래스로 표현할수 있다.
-    
-    // 이수한 과목 전달하여 평균학점 계산을 요청한다. ---> 학점 계산기 에게 요청 
+    /**
+     * 핵심 포인트
+     * */
+    // 이수한 과목 전달하여 평균학점 계산을 요청한다. ---> 학점 계산기 에게 요청
     //                                         ---> (학점수 * 교과목 평점) 의 합계 ----> 과목(코스) 에게 요청할수 있다.
     //                                         ---> 수강신청 총학점수             ----> 과목(코스) 에게 요청할수 있다.
+
+
+
     //(코스에는 해당 자료구조가 3학점인지 2학점인지 정보를 가지고 있다. 
     // 이 코스정보에는 자신이 받은 평점 또한 가지고 있다. 
     // 즉, 이수한 과목들을 전달 받은 학점계산기는 학점수와 교과목 평점을 알고있는 과목 코스에게 
@@ -39,7 +44,7 @@ public class GradeCalculatorTest {
                 new Course("자료구조",3,"A+"));
 
         // 학점 계산기 에게 학점계산기가 생성될때 이수한 과목들을 전달하기
-        GradeCalculator gradeCalculator = new GradeCalculator(courses);
+        GradeCalculator gradeCalculator = new GradeCalculator(new Courses(courses));
         // 그리고 전달받은 정보 이수한 과목들을 가지고 GRADE 성적을 계산하기
         double  gradeResult = gradeCalculator.calculateGrade();
 
