@@ -28,10 +28,10 @@ public class UserDaoTest {
         // Dao : 데이터 엑세스 오브젝트 , DB 작업 수행할때 USER DAO에게 위임할 예정
         UserDao userDao = new UserDao();
 
+//        userDao.create(new org.example.User("wizard","password","name","email"));
         userDao.create(new org.example.User("wizard","password","name","email"));
 
-
-        org.example.User user = userDao.findByUserId("JUNG");
+        org.example.User user = userDao.findByUserId("wizard");
 
         assertThat(user).isEqualTo(new org.example.User("wizard","password","name","email"));
 
