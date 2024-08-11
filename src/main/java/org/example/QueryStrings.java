@@ -10,6 +10,7 @@ public class QueryStrings {
     private List<QueryString> queryStrings = new ArrayList<>();
 
     public QueryStrings(String queryStringLine) {
+        //"operand1=11&operator=*&operand2=55"
         String[] queryStringTokens = queryStringLine.split("&");
         Arrays.stream(queryStringTokens)
                 .forEach(queryString -> {
