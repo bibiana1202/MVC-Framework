@@ -24,6 +24,8 @@ dependencies {
     // 로그 출력을 위해 로그 관련된 의존성
     implementation 'ch.qos.logback:logback-classic:1.2.3'
 
+    // 리플렉션
+    implementation 'org.reflections:reflections:0.9.12'
 
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'

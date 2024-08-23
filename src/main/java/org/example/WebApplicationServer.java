@@ -17,7 +17,7 @@ public class WebApplicationServer {
         Tomcat tomcat = new Tomcat(); // 그 하위에 있는 파일들을 Tomcat이 찾아서 실행하는 형태로 동작한다는 의미
         tomcat.setPort(8080); // 8080 포트
         // tomcat 이 실행되면 webapps 밑에 빌드된 webapplicationServer 가 자동적으로 들어온다.
-
+        tomcat.getConnector();
         tomcat.addWebapp("/",new File(webappDirLocation).getAbsolutePath());
         // = localhost 8080 으로 입력했을때 web directory location , 즉 webapps라는 디렉토리를 바라보겠다
         log.info("configuring app with basedir : {}", new File("./"+webappDirLocation).getAbsolutePath());

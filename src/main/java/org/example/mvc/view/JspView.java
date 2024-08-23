@@ -18,7 +18,8 @@ public class JspView implements View{
     public void render(Map<String, ?> model, HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         model.forEach(request::setAttribute);
-        // serAttribute에서 name은 users,값은 listof 처럼 세팅했던것을 모델에 값이 있으면 request set attribete 로 모두 세팅해주세요 코드(???)
+        // serAttribute에서 name은 users,값은 listof 처럼 세팅했던것을
+        // 모델에 값이 있으면 request set attribete 로 모두 세팅해주세요 코드(???)
 
 
         //  forward 방식
