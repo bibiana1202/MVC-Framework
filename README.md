@@ -9,6 +9,7 @@
 
 1-4. 웹 어플리케이션 이해
   - was-project
+  - servelt-practice
 
 1-5. jdbc 프로그래밍
   - jdbc-practice
