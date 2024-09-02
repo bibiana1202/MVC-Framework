@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+}
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    //mvn repository 에서 dependency 를 찾을수 있다.
+    //웹 어플리케이션 서버를 embedded tomcat 을 이용해서 만들것이므로 관련된 dependency를 추가
+    implementation 'org.apache.tomcat.embed:tomcat-embed-core:8.5.42'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:8.5.42'
+    //자바를 이용해서 웹 어플리케이션을 만들기 위해서는 servlet 이 필요하므로 서블릿과 관련된 dependency 또한 추가
+    implementation 'javax.servlet:javax.servlet-api:4.0.1'
+    //서블릿을 이용해서 프로그래밍시 화면을 통해 확인하기 위해서 지금은 거의 사용하지 않는 jsp 를 이용해서 화면을 구성
+    implementation 'javax.servlet:jstl:1.2'
+
+    implementation 'org.reflections:reflections:0.9.12'
+
+    //간단하게 로그 출력을 위해 로그와 로그와 관련된 dependency 추가
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
