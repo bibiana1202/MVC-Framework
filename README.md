@@ -2,6 +2,7 @@
 
 
 1-2. 개발환경구성
+  - mvc-practice
 
 1-3. 객체지향 패러다임
   - oop-practice
